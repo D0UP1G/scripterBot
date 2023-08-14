@@ -69,7 +69,7 @@ async def deleter(message: types.Message, state: FSMContext):
 @dp.callback_query_handler()
 async def data(data: types.CallbackQuery):
     print(data.data)
-    process = subprocess.Popen(['python3', 'scripts/'+data.data], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process = subprocess.Popen(['python', 'scripts/'+data.data], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(process.communicate())
 
 @dp.message_handler(content_types=types.ContentTypes.DOCUMENT)
