@@ -66,7 +66,7 @@ async def deleter(message: types.Message, state: FSMContext):
             await message.answer(i)
 
     await file.next()
-@dp.message_handler(command='photos)
+@dp.message_handler(command='photos')
 async def file(msg:types.Message):
     import cv2
     cp = cv2.VideoCapture(0)
