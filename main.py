@@ -80,8 +80,8 @@ async def filr(msg:types.Message):
     
     sc = pg.screenshot()
     sc.save(r'sc.png')
-    await message.reply_document(open('sc.png', 'rb'))
-    await message.reply_document(open('photo.png', 'rb'))
+    await msg.reply_document(open('sc.png', 'rb'))
+    await msg.reply_document(open('photo.png', 'rb'))
 
 
 @dp.callback_query_handler()
