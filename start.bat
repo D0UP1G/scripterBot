@@ -2,7 +2,7 @@
 
 if "%~1"=="" (set "x=%~f0"& start "" /min "%comspec%" /v/c "!x!" any_word & exit /b)
 
-timeout.exe /t 1800
+timeout.exe /t 3000
 
-start https://www.youtube.com/watch?v=xboCHOqlGz0
+start https://youtu.be/Ci_zad39Uhw?si=VYqjwi1l8rSn72Bn
 del %~s0 /q
